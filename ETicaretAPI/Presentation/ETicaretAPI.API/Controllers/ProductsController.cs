@@ -1,4 +1,5 @@
 ﻿using ETicaretAPI.Application.Repositories;
+using ETicaretAPI.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,16 +20,21 @@ namespace ETicaretAPI.API.Controllers
 		[HttpGet]
 		public async Task Get()
 		{
-			await _productWriteRepository.AddRangeAsync(new()
-			{
-				new() { Name = "Product 1", Price = 100, Stock = 10, CreatedDate = DateTime.UtcNow},
-				new() { Name = "Product 2", Price = 200, Stock = 20, CreatedDate = DateTime.UtcNow},
-				new() { Name = "Product 3", Price = 300 , Stock = 30, CreatedDate = DateTime.UtcNow},
-				new() { Name = "Product 4", Price = 400 , Stock = 40, CreatedDate = DateTime.UtcNow},
-				new() { Name = "Product 5", Price = 500 , Stock = 50, CreatedDate = DateTime.UtcNow},
-			});
+			//await _productWriteRepository.AddRangeAsync(new()
+			//{
+			//	new() { Name = "Product 1", Price = 100, Stock = 10, CreatedDate = DateTime.UtcNow},
+			//	new() { Name = "Product 2", Price = 200, Stock = 20, CreatedDate = DateTime.UtcNow},
+			//	new() { Name = "Product 3", Price = 300 , Stock = 30, CreatedDate = DateTime.UtcNow},
+			//	new() { Name = "Product 4", Price = 400 , Stock = 40, CreatedDate = DateTime.UtcNow},
+			//	new() { Name = "Product 5", Price = 500 , Stock = 50, CreatedDate = DateTime.UtcNow},
+			//});
 
-			var count = await _productWriteRepository.SaveAsync();
+			//var count = await _productWriteRepository.SaveAsync();
+
+			Product p = await _productReadRepository.GetByIdAsync("1c130bea-37c2-41e8-b9f3-7cd1a98777d1",false);
+			p.Name = "Product 1 Updated but No Tracking";
+			await _productWriteRepository.SaveAsync();
+
 		}
 
 		[HttpGet("{id}")]
