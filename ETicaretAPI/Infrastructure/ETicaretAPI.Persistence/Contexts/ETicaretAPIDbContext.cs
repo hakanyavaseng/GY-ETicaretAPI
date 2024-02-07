@@ -1,5 +1,7 @@
 ﻿using ETicaretAPI.Domain.Entities;
+using ETicaretAPI.Domain.Entities.Common;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,23 @@ namespace ETicaretAPI.Persistence.Contexts
 		public ETicaretAPIDbContext(DbContextOptions options) : base(options) //IoC container will use this constructor to create an instance of the DbContext
 		{
 			  
+		}
+
+		//Every entity has created and updated date properties. This overriding method will automatically set these properties when an entity is added or updated.
+		public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+		{
+			 var entry = ChangeTracker.Entries<BaseEntity>();
+
+			foreach(var item in entry)
+			{
+				_ = item.State switch
+				{
+					EntityState.Added => item.Entity.CreatedDate = DateTime.UtcNow,
+					EntityState.Modified => item.Entity.UpdatedDate = DateTime.UtcNow,
+				};
+			}
+
+			return await base.SaveChangesAsync(cancellationToken);
 		}
 
 		public DbSet<Product> Products { get; set; }
