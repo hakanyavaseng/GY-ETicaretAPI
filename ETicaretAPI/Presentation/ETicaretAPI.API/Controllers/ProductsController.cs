@@ -11,10 +11,8 @@ namespace ETicaretAPI.API.Controllers
 	{
 		readonly private IProductWriteRepository _productWriteRepository;
 		readonly private IProductReadRepository _productReadRepository;
-
 		readonly private IOrderWriteRepository _orderWriteRepository;
 		readonly private IOrderReadRepository _orderReadRepository;
-
 		readonly private ICustomerWriteRepository _customerWriteRepository;
 
 		public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository, IOrderWriteRepository orderWriteRepository, ICustomerWriteRepository customerWriteRepository, IOrderReadRepository orderReadRepository)
@@ -29,7 +27,7 @@ namespace ETicaretAPI.API.Controllers
 		[HttpGet]
 		public async Task Get()
 		{
-			Order order = await _orderReadRepository.GetByIdAsync("788be657-69c5-4652-8d0f-b1aab7acdcfb");
+			Order order = await _orderReadRepository.GetByIdAsync("788be657-69c5-4652-8d0f-b1aab7acdcfb",false);
 			order.Description = "Updated Description";
 			await _orderWriteRepository.SaveAsync();
 			

@@ -9,8 +9,8 @@ C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Core\ETicaretAPI.Application\obj\Debug\net6.0\ETicaretAPI.Application.AssemblyInfo.cs
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Core\ETicaretAPI.Application\obj\Debug\net6.0\ETicaretAPI.Application.csproj.CoreCompileInputs.cache
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Core\ETicaretAPI.Application\obj\Debug\net6.0\ETicaretAPI.Application.sourcelink.json
-C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Core\ETicaretAPI.Application\obj\Debug\net6.0\ETicaretAPI.Application.csproj.CopyComplete
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Core\ETicaretAPI.Application\obj\Debug\net6.0\ETicaretAPI.Application.dll
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Core\ETicaretAPI.Application\obj\Debug\net6.0\refint\ETicaretAPI.Application.dll
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Core\ETicaretAPI.Application\obj\Debug\net6.0\ETicaretAPI.Application.pdb
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Core\ETicaretAPI.Application\obj\Debug\net6.0\ref\ETicaretAPI.Application.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Core\ETicaretAPI.Application\obj\Debug\net6.0\ETicaret.BBAD6852.Up2Date
