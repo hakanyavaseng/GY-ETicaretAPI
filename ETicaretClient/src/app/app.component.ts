@@ -8,12 +8,8 @@ declare var $: any;
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  constructor(private toastr: CustomToastrService) {
-    this.toastr.message("Hello", "Hakan", {
-      messageType: ToastrMessageType.Success,
-      position: ToastrPosition.TopRight
-    });
-  }
+  constructor() {};
+
   title = 'ETicaretClient';
 
 }
