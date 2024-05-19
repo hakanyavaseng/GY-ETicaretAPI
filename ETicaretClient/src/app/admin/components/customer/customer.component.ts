@@ -12,9 +12,6 @@ export class CustomerComponent extends BaseComponent {
     super(spinnerService);
   }
 
-  ngOnInit() : void {
-    this.showSpinner(SpinnerType.BallAtom);
-  }
 
 
 }
