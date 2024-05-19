@@ -14,6 +14,6 @@ export class AppComponent {
 
 }
 
-$(document).ready(function() {
-  console.log('Hello from jQuery!');
+$.get("https://localhost:7294/api/Products", data => {
+  console.log(data);
 });
