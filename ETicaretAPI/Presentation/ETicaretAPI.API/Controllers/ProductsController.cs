@@ -1,4 +1,5 @@
 ﻿using ETicaretAPI.Application.Repositories;
+using ETicaretAPI.Application.ViewModels.Products;
 using ETicaretAPI.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,20 @@ namespace ETicaretAPI.API.Controllers
         public async Task<IActionResult> Get()
         {
             return Ok(await _productReadRepository.GetAll().ToListAsync());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(VM_Create_Product model)
+        {
+            await _productWriteRepository.AddAsync(new Product()
+            {
+                Id = Guid.NewGuid(),
+                Name = model.Name,
+                Price = model.Price,
+                Stock = model.Stock,
+            });
+            await _productWriteRepository.SaveAsync();
+            return Ok();
         }
 
         [HttpGet("{id}")]
