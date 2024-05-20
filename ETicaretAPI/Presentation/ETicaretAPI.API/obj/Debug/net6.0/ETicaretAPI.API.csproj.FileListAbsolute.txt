@@ -48,3 +48,16 @@ C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\obj\Debug\net6.0\ETicaret.822DF9EF.Up2Date
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.Infrastructure.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.Infrastructure.pdb
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\MediatR.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\SendGrid.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\StarkbankEcdsa.dll

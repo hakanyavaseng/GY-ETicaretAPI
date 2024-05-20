@@ -1,9 +1,9 @@
+using ETicaretAPI.Application;
+using ETicaretAPI.Application.Exceptions.OnionAPI.Application.Exceptions;
 using ETicaretAPI.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Adding layers
-builder.Services.AddPersistenceServices();
 
 //CORS
 builder.Services.AddCors(opt =>
@@ -22,6 +22,10 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 
+//Adding layers
+builder.Services.AddPersistenceServices();
+builder.Services.AddApplicationServices();
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
@@ -31,6 +35,8 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseCors();
 app.UseHttpsRedirection();
