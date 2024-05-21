@@ -11,15 +11,16 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteDirective } from './directives/admin/delete.directive';
+import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent
-    ],
+  ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     AdminModule, UiModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule,
