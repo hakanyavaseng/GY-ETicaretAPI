@@ -1,13 +1,9 @@
 ﻿using ETicaretAPI.Application.Features.Products.Commands.CreateProduct;
 using ETicaretAPI.Application.Repositories;
-using ETicaretAPI.Application.ViewModels.Products;
-using ETicaretAPI.Domain.Entities;
-using FluentValidation;
-using FluentValidation.Results;
+using ETicaretAPI.Application.RequestParameters;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 
 namespace ETicaretAPI.API.Controllers
 {
@@ -16,17 +12,39 @@ namespace ETicaretAPI.API.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IMediator mediator;
+        IProductReadRepository productReadRepository;
 
-        public ProductsController(IMediator mediator)
+        public ProductsController(IMediator mediator, IProductReadRepository productReadRepository)
         {
             this.mediator = mediator;
+            this.productReadRepository = productReadRepository;
+
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Get()
-        //{
-        //    //return Ok(await _productReadRepository.GetAll().ToListAsync());
-        //}
+        [HttpGet]
+        public async Task<IActionResult> Get([FromQuery] Pagination pagination)
+        {
+            var totalCount = await productReadRepository.GetAll(false).CountAsync();
+            var products = await productReadRepository.GetAll(false).Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Price,
+                p.Stock,
+                p.CreatedDate,
+                p.UpdatedDate,
+            })
+            .Skip(pagination.Page * pagination.Size)
+            .Take(pagination.Size)
+            .OrderByDescending(p => p.CreatedDate)
+            .ToListAsync();
+
+            return Ok(new
+            {
+                totalCount,
+                products
+            });
+        }
 
         [HttpPost]
         public async Task<IActionResult> Post(CreateProductCommandRequest request)
