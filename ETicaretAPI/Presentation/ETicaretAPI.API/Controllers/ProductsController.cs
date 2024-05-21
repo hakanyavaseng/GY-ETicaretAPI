@@ -13,12 +13,13 @@ namespace ETicaretAPI.API.Controllers
     {
         private readonly IMediator mediator;
         IProductReadRepository productReadRepository;
+        IProductWriteRepository productWriteRepository;
 
-        public ProductsController(IMediator mediator, IProductReadRepository productReadRepository)
+        public ProductsController(IMediator mediator, IProductReadRepository productReadRepository, IProductWriteRepository productWriteRepository)
         {
             this.mediator = mediator;
             this.productReadRepository = productReadRepository;
-
+            this.productWriteRepository = productWriteRepository;
         }
 
         [HttpGet]
@@ -53,6 +54,14 @@ namespace ETicaretAPI.API.Controllers
             await mediator.Send(request);
             return Ok();
 
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] string id)
+        {
+            await productWriteRepository.RemoveAsync(id);
+            await productWriteRepository.SaveAsync();
+            return Ok();
         }
 
         //[HttpGet("{id}")]

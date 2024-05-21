@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { List_Product } from '../../../../contracts/list_product';
 import { ProductService } from '../../../../services/common/models/product.service';
@@ -13,13 +13,12 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrl: './list.component.scss'
 })
 export class ListComponent extends BaseComponent implements OnInit {
+
+
   constructor(private productService: ProductService, private alertify: AlertifyService, spinner: NgxSpinnerService) {
     super(spinner);
   }
-
-
-
-  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate'];
+  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate', 'actions'];
   dataSource: MatTableDataSource<List_Product> = null;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -28,23 +27,36 @@ export class ListComponent extends BaseComponent implements OnInit {
 
     this.showSpinner(SpinnerType.BallAtom);
 
-    const allProducts: {totalCount:number, products: List_Product[]} = await this.productService.read(this.paginator ? this.paginator.pageIndex : 0, this.paginator ? this.paginator.pageSize : 10,() => {
-      this.hideSpinner(SpinnerType.BallAtom);
-    }, (message) => {
-      this.alertify.message(message, {
-        position: Position.TopRight,
-        dismissOthers: true,
-        messageType: MessageType.Error,
-        delay: 5000
+    const allProducts: { totalCount: number, products: List_Product[] } =
+      await this.productService.read(this.paginator ? this.paginator.pageIndex : 0, this.paginator ? this.paginator.pageSize : 10, () => {
+        this.hideSpinner(SpinnerType.BallAtom);
+      }, (message) => {
+        this.alertify.message(message, {
+          position: Position.TopRight,
+          dismissOthers: true,
+          messageType: MessageType.Error,
+          delay: 5000
+        });
+        this.hideSpinner(SpinnerType.BallAtom);
       });
-      this.hideSpinner(SpinnerType.BallAtom);
-    });
     this.dataSource = new MatTableDataSource<List_Product>(allProducts.products);
     this.paginator.length = allProducts.totalCount;
 
     console.log(this.paginator.length);
 
   }
+
+  delete(id: string) {
+    alert(id);
+
+  }
+
+  update(id: string) {
+    alert(id);
+
+  }
+
+
 
   async pageChanged() {
     await this.listProducts();
