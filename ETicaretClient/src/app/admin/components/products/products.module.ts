@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { DeleteDirective } from '../../../directives/admin/delete.directive';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dialog.component';
+import { FileUploadModule } from '../../../services/common/file-upload/file-upload.module';
 
 
 
@@ -25,10 +26,10 @@ import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dia
     ProductsComponent,
     CreateComponent,
     ListComponent,
-    DeleteDirective
+    DeleteDirective,
   ],
   imports: [
-    CommonModule,
+    CommonModule, FileUploadModule,
     MatSidenavModule, MatInputModule,MatFormFieldModule,MatButtonModule, MatTableModule,MatPaginatorModule,MatIconModule,MatDialogModule,
     RouterModule.forChild([
       { path: "", component: ProductsComponent }

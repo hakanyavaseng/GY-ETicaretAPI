@@ -61,3 +61,4 @@ C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\SendGrid.dll
 C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\StarkbankEcdsa.dll
+C:\Users\hakan\OneDrive\Belgeler\Github Repositories\GY-ETicaretAPI\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.API.staticwebassets.runtime.json
